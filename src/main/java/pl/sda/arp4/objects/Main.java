@@ -1,28 +1,33 @@
 package pl.sda.arp4.objects;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+// wypisanie wszystkich dostepnych opcji enum
+        for (RodzajPojazdu rodzaj : RodzajPojazdu.values()) {
+            System.out.println(rodzaj);
 
-        // java jako język obiektowy
-        // obietk typu samochód
-        // obiekt typu.. kot, pies, itd
+        }
+        Scanner scanner = new Scanner(System.in);
+        RodzajPojazdu zmienna = null;
+        while (zmienna == null) {
 
-        Pies pies1 = new Pies();
-        pies1.imie = "Burek";
-        System.out.println(pies1);
+        System.out.println("Podaj rodzaj pojazdu");
+        String rodzajString = scanner.next();
 
-        Pies pies2 = new Pies();
-        pies2.imie = "Waclaw";
-        System.out.println(pies2);
+        //zamiast pisać if/else dla wszystkich rozdajów i porównywać
+        // możemy zastosować metodę .valueOf która wygenerowana jest dla każdego typu wyliczeniowego (enum)
 
-        Student student1 = new Student("Kasia", "Kos");
-     //   student1.imie = "Kasia";
-       // student1.nazwisko = "Kos";
-        System.out.println(student1);
-        System.out.println("Ten student ma na imię " + student1.getImie());
+        try {
+            zmienna = RodzajPojazdu.valueOf(rodzajString.toUpperCase());
+            System.out.println(zmienna);
+        } catch (IllegalArgumentException iae){
+            System.out.println("Wybrana opcja nie istnieje");
+        }
+
     }
+        System.out.println(zmienna);
 
-
-
-}
+}}

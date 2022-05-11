@@ -1,4 +1,4 @@
-package pl.sda.arp4.objects;
+package pl.sda.arp4.objects.modele;
 
 public class Student {
 
@@ -12,6 +12,9 @@ public class Student {
     public Student(String imie, String nazwisko) {
         this.imie = imie;
         this.nazwisko = nazwisko;
+    }
+    public void przedstawSie(){
+        System.out.println("Jestem biednym studentem, nazywam sie " + imie + " " + nazwisko);
     }
 
     public String getImie() {
