@@ -8,7 +8,6 @@ public class Main {
 // wypisanie wszystkich dostepnych opcji enum
         for (RodzajPojazdu rodzaj : RodzajPojazdu.values()) {
             System.out.println(rodzaj);
-
         }
         Scanner scanner = new Scanner(System.in);
         RodzajPojazdu zmienna = null;
